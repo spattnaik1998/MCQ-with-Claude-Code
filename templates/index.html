@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Choice Assignment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Multiple Choice Assignment System</h1>
+        </header>
+
+        <div id="assignments-list" class="section">
+            <h2>Available Assignments</h2>
+            <div id="assignments-container">
+                <p>Loading assignments...</p>
+            </div>
+        </div>
+
+        <div id="assignment-detail" class="section" style="display: none;">
+            <h2 id="assignment-title"></h2>
+            <p id="assignment-description"></p>
+            <div id="time-limit"></div>
+            
+            <form id="assignment-form">
+                <div id="questions-container"></div>
+                
+                <div class="student-info">
+                    <label for="student-id">Student ID:</label>
+                    <input type="text" id="student-id" name="student-id" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Assignment</button>
+                <button type="button" class="back-btn" onclick="showAssignmentsList()">Back to Assignments</button>
+            </form>
+        </div>
+
+        <div id="result-section" class="section" style="display: none;">
+            <h2>Assignment Results</h2>
+            <div id="result-content"></div>
+            <button type="button" class="back-btn" onclick="showAssignmentsList()">Back to Assignments</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  quiz-app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=production
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    container_name: multiple-choice-quiz
